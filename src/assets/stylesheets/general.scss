@@ -1,0 +1,54 @@
+@import '/src/assets/stylesheets/mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+
+/* GENERAL STYLES */
+* {
+  @include reset-p-m();
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $black-color;
+/*   font-family: $primary-font; */
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    @include mobile-width();
+  }
+}
+
+
+
+/* FONTS */
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.8rem;
+}
