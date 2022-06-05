@@ -1,13 +1,11 @@
 import { GET_PRODUCTS, NEW_PRODUCT } from "../types/index";
 
-
 const initialState = {
   products: [],
   error: null
 }
 
 export function productsReducer(state = initialState, action) {
-  
   switch(action.type) {
     case GET_PRODUCTS:
         return ({
