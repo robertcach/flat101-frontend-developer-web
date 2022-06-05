@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { listProducts } from "../../services/ProductsService"
+import { listProducts } from "../../services/ProductsService";
+import ProductCard from "../../components/ProductCard/ProductCard";
 import "./Home.scss";
 
 const Home = () => {
@@ -16,11 +17,11 @@ const Home = () => {
     <h1>All products</h1>
     {products && products.map(product => {
       return (
-        <>
-          <h2>{product.title}</h2>
-          <p>{product.description}</p>
-          <img src={product.image} alt={product.title} />
-        </>
+        <ProductCard
+          title={product.title}
+          description={product.description}
+          image={product.image}  
+        /> 
       )
     })}
     </>
