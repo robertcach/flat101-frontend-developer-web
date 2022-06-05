@@ -2,13 +2,16 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import InputGroup from "../../../components/InputGroup/InputGroup";
 import { useNavigate } from 'react-router-dom';
-import { createProduct } from "../../../services/ProductsService";
+/* import { createProduct } from "../../../services/ProductsService"; */
+import { addProduct } from '../../../redux/actions/productsActions'
+import { useDispatch } from 'react-redux';
 import "./NewProduct.scss";
 
 const NewProduct = () => {
   const [errors, setErrors] = useState(false);
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
 
   const onSubmit = (data) => {
@@ -23,15 +26,25 @@ const NewProduct = () => {
     if (image[0]) {
       bodyFormData.append("image", image[0])
     }
-  
-  
+
+
     if (!rest) {
+      setErrors(true)
+    } else {
+      const addNewProduct = (newProduct) => dispatch(addProduct(newProduct))
+      addNewProduct(bodyFormData)
+      navigate("/")
+    }
+
+
+  
+/*     if (!rest) {
       setErrors(true)
     } else {
       createProduct(bodyFormData)
         .then(product => navigate("/"))
         .catch(error => setErrors(error?.response?.data?.errors))
-    }
+    } */
   }
 
   return (

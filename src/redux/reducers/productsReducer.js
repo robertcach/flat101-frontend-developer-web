@@ -1,19 +1,26 @@
-import { GET_PRODUCTS } from "../types/index";
+import { GET_PRODUCTS, NEW_PRODUCT } from "../types/index";
+
 
 const initialState = {
   products: [],
-  error: null,
-  oneProduct: null
+  error: null
 }
 
+
+
 export function productsReducer(state = initialState, action) {
+  
   switch(action.type) {
     case GET_PRODUCTS:
         return ({
             ...state,
-            oneProduct: null,
             products: action.payload
         })
+    case NEW_PRODUCT:
+      return ({
+          ...state,
+          products: [...state.products, action.payload]
+      })
     default:
         return state;
   }
