@@ -29,25 +29,22 @@ const Home = () => {
         </div>  
       </section>
 
-    <section id="products" className="products wrapper">
-      <h2 className="products__title">Products</h2>
-      <div className="products__cards">
-        {products && products.map(product => {
-          return (
-            <ProductCard
-              title={product.title}
-              description={product.description}
-              image={product.image}
-              price={product.price}
-            /> 
-          )
-        })}
-
-      </div>
-
-    </section>
-  </main>
-
+      <section id="products" className="products wrapper">
+        <h2 className="products__title">Products</h2>
+        <div className="products__cards">
+          {products && products.map(product => {
+            return (
+              <ProductCard
+                title={product.title}
+                description={product.description}
+                image={product.image}
+                price={product.price}
+              /> 
+            )
+          })}
+        </div>
+      </section>
+    </main>
   )
 }
 

@@ -1,5 +1,11 @@
 @import "/src/assets/stylesheets/general.scss";
 
-h1 {
-  font-size: 8rem
+.new-movie {
+  &__btn {
+    @include btn-border($white-color, $black-color);
+
+    &:hover {
+      @include btn($black-color, $white-color);
+    }
+  }
 }
