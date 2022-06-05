@@ -30,12 +30,12 @@ const NewProduct = () => {
     } else {
       createProduct(bodyFormData)
         .then(product => navigate("/"))
-        .catch(err => setErrors(err?.response?.data?.errors))
+        .catch(error => setErrors(error?.response?.data?.errors))
     }
   }
 
   return (
-    <>
+    <div className="new-product wrapper">
       <h1>New Product</h1>
 
       {errors && <div>Check all fields!</div>}
@@ -45,7 +45,7 @@ const NewProduct = () => {
           id="title"
           register={register}
           type="text"
-          placeholder="Product title"  
+          placeholder="Product title"
         />
 
         <InputGroup
@@ -72,9 +72,9 @@ const NewProduct = () => {
           placeholder="Image"
         />
 
-        <button className="new-movie__btn">Create Product</button>
+        <button className="new-product__btn">Create Product</button>
       </form>
-    </>
+    </div>
   )
 }
 

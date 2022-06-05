@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
-import { listProducts } from "../../services/ProductsService";
+import { useEffect} from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
+import { useSelector, useDispatch } from "react-redux";
+import { getProducts } from '../../redux/actions/productsActions'
 import "./Home.scss";
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    listProducts()
-      .then(allProducts => setProducts(allProducts))
-  },[])
+      const products = () => dispatch(getProducts())
+      products()
+  }, [dispatch])
 
+  const allProducts = useSelector(state => state.allProducts.products)
 
   return (
     <main>
@@ -21,7 +23,7 @@ const Home = () => {
         </div>
 
         <div className="header__center">
-          <img src="https://picsum.photos/id/157/600/750" className="header__img" alt="imagen-superior-izquierda" />
+          <img src="https://picsum.photos/id/157/600/750" className="header__img" alt="header-image" />
         </div>
 
         <div className="header__right">
@@ -32,7 +34,7 @@ const Home = () => {
       <section id="products" className="products wrapper">
         <h2 className="products__title">Products</h2>
         <div className="products__cards">
-          {products && products.map(product => {
+          {allProducts && allProducts.map(product => {
             return (
               <ProductCard
                 title={product.title}
