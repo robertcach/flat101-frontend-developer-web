@@ -18,7 +18,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $black-color;
-/*   font-family: $primary-font; */
+  font-family: $main-font;
 }
 
 .wrapper {
@@ -33,6 +33,11 @@ body {
 
 
 /* FONTS */
+
+h1, h2, h3, h4, p {
+  font-family: $main-font;
+}
+
 h1 {
   font-size: 5rem;
 }
