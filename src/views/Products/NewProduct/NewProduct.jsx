@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import "./NewProduct.scss";
 
 const NewProduct = () => {
-  const [errors, setErrors] = useState(false);
+  const [errors, setErrors] = useState(false)
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -30,6 +30,7 @@ const NewProduct = () => {
 
     if (!rest) {
       setErrors(true)
+      return
     } else {
       const addNewProduct = (newProduct) => dispatch(addProduct(newProduct))
       addNewProduct(bodyFormData)

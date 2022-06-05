@@ -6,8 +6,6 @@ const initialState = {
   error: null
 }
 
-
-
 export function productsReducer(state = initialState, action) {
   
   switch(action.type) {

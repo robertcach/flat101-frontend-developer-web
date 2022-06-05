@@ -5,9 +5,7 @@ export function getProducts()  {
   return (dispatch) => {
     listProducts()
     .then(res => dispatch(downloadProducts(res)))
-    .catch(err => {
-        console.log(err)
-    })
+    .catch(err => console.log(err))
   }
 }
 
@@ -16,11 +14,11 @@ const downloadProducts = products => ({type: GET_PRODUCTS, payload: products})
 
 export function addProduct(product) {
   return (dispatch) => {
-      createProduct(product)
-        .then(res => dispatch(addProductSuccess(res)))
-        .catch(err => {
-            console.log(err)
-        })
+    createProduct(product)
+      .then(res => dispatch(addProductSuccess(res)))
+      .catch(err => {
+          console.log(err)
+      })
   }
 }
 

@@ -37,6 +37,7 @@ const Home = () => {
           {allProducts && allProducts.map(product => {
             return (
               <ProductCard
+                key={product._id}
                 title={product.title}
                 description={product.description}
                 image={product.image}
