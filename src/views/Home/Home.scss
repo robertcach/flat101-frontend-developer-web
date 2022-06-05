@@ -1,23 +1,43 @@
 @import "/src/assets/stylesheets/general.scss";
 
+/* HEADER */
 .header {
   min-height: 100vh;
   @include flex(flex, row, nowrap, space-between, center);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
   
   &__left {
     width: 20%;
     z-index: 9999;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      z-index: 0;
+      height: auto;
+    }
   }
   
   &__title {
     font-size: 10rem;
     text-transform: uppercase;
-    margin-bottom: 3rem
+    margin-bottom: 3rem;
+
+    @media (max-width: 768px) {
+      font-size: 5rem
+    }
   }
 
   &__btn {
     @include btn-border($white-color, $black-color);
     font-size: 2.4rem;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
     
     &:hover {
       @include btn($black-color, $white-color);
@@ -29,10 +49,24 @@
     width: 60%;
     z-index: 0;
     text-align: center;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   &__right {
     width: 20%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
   
   &__subtitle {
@@ -41,7 +75,14 @@
 }
 
 
+
+/* PRODUCTS */
 .products {
+
+  @media (max-width: 768px) {
+    margin-top: 3rem !important;
+  }
+
   &__title {
     text-align: center;
     margin-bottom: 2rem;
@@ -51,5 +92,9 @@
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    }
   }
 }

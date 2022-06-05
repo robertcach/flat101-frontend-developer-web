@@ -21,7 +21,7 @@ const Home = () => {
         </div>
 
         <div className="header__center">
-          <img src="https://picsum.photos/id/157/600/750" alt="imagen-superior-izquierda" />
+          <img src="https://picsum.photos/id/157/600/750" className="header__img" alt="imagen-superior-izquierda" />
         </div>
 
         <div className="header__right">
