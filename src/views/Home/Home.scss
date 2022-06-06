@@ -35,6 +35,8 @@
   &__btn {
     @include btn-border($white-color, $black-color);
     font-size: 2.4rem;
+    margin-bottom: 2rem;
+    display: inline-block;
 
     @media (max-width: 768px) {
       font-size: 2rem;
