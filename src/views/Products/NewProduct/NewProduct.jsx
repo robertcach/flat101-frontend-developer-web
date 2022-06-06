@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import InputGroup from "../../../components/InputGroup/InputGroup";
 import { useNavigate } from 'react-router-dom';
-/* import { createProduct } from "../../../services/ProductsService"; */
 import { addProduct } from '../../../redux/actions/productsActions'
 import { useDispatch } from 'react-redux';
 import "./NewProduct.scss";
@@ -36,23 +35,11 @@ const NewProduct = () => {
       addNewProduct(bodyFormData)
       navigate("/")
     }
-
-
-  
-/*     if (!rest) {
-      setErrors(true)
-    } else {
-      createProduct(bodyFormData)
-        .then(product => navigate("/"))
-        .catch(error => setErrors(error?.response?.data?.errors))
-    } */
   }
 
   return (
     <div className="new-product wrapper">
       <h1>New Product</h1>
-
-      {errors && <div>Check all fields!</div>}
       <form onSubmit={handleSubmit(onSubmit)}>
         <InputGroup
           label="Title"
