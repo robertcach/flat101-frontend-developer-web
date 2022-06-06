@@ -46,7 +46,7 @@ const NewProduct = () => {
           id="title"
           register={register}
           type="text"
-          placeholder="Product title"
+          placeholder="Title (required)"
         />
 
         <InputGroup
@@ -54,7 +54,7 @@ const NewProduct = () => {
           id="description"
           register={register}
           type="text"
-          placeholder="Product description"
+          placeholder="Description (required)"
         />
 
         <InputGroup
@@ -62,7 +62,7 @@ const NewProduct = () => {
           id="price"
           register={register}
           type="number"
-          placeholder="Product price"
+          placeholder="Price (required)"
         />  
 
         <InputGroup
@@ -70,7 +70,7 @@ const NewProduct = () => {
           id="image"
           register={register}
           type="file"
-          placeholder="Image"
+          placeholder="Image (required)"
         />
 
         <button className="new-product__btn">Create Product</button>
